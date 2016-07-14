@@ -22,9 +22,10 @@
 
       <ul>
         <li class="category">Social</li>
+        <li><a href="https://github.com/hankliu5/">GitHub</a></li>
       </ul>
       <% if !user_signed_in? %>
-        <p class="sign_in"><%= link_to "Admin Sign In", user_session_path %></p>
+        <p class="sign_in"><%= link_to "Admin Sign In", new_user_session_path %></p>
       <% end %>
     </div>
 
@@ -40,7 +41,7 @@
         <% if user_signed_in? %>
           <div class="buttons">
             <button class="button"><%= link_to "New Post", new_post_path %></button>
-            <button class="button">Log Out</button>
+            <button class="button"><%= link_to "Log Out", destroy_user_session_path, :method => :delete%></button>
           </div>
         <% end %>
       </div>
